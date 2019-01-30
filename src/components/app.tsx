@@ -2,7 +2,7 @@ import { Component, h } from "preact";
 import { Route, Router, RouterOnChangeArgs } from "preact-router";
 
 import Home from "../routes/home";
-import Profile from "../routes/profile";
+import ProjectDisplay from "../routes/project-display";
 import Header from "./header";
 
 if ((module as any).hot) {
@@ -19,11 +19,9 @@ export default class App extends Component {
     public render() {
         return (
             <div id="app">
-                <Header />
                 <Router onChange={this.handleRoute}>
                     <Route path="/" component={Home} />
-                    <Route path="/profile/" component={Profile} user="me" />
-                    <Route path="/profile/:user" component={Profile} />
+                    <Route path="/:category" component={ProjectDisplay} />
                 </Router>
             </div>
         );
