@@ -7,4 +7,19 @@ enum Category {
     SCHOOL = 'school'
 }
 
+export const CategoryInfo = {
+    [Category.PERSONAL]: {
+        title: 'Personal Projects',
+        description: ''
+    },
+    [Category.PROFESSIONAL]: {
+        title: 'Professional Work',
+        description: ''
+    },
+    [Category.SCHOOL]: {
+        title: 'School Projects',
+        description: ''
+    }
+}
+
 export default Category

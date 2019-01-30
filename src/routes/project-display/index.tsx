@@ -1,5 +1,5 @@
 import { Component, h } from "preact";
-import Category from "../../models/Category";
+import Category, { CategoryInfo } from "../../models/Category";
 import * as style from "./style.css";
 
 interface Props {
@@ -17,21 +17,10 @@ export default class ProjectDisplay extends Component<Props> {
     }
 
     public render({ category }: Props) {
-        let title = ''
-        switch (category) {
-            case Category.PERSONAL:
-                title = "Personal Projects"
-                break
-            case Category.PROFESSIONAL:
-                title = "Professional Work"
-                break
-            case Category.SCHOOL:
-                title = "School Projects"
-                break
-        }
         return (
             <div class={style.projectDisplay}>
-                <h1>{title}</h1>
+                <h1>{CategoryInfo[category].title}</h1>
+                <p>{CategoryInfo[category].description}</p>
             </div>
         );
     }
