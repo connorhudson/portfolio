@@ -3,6 +3,7 @@ import { Route, Router, RouterOnChangeArgs } from "preact-router";
 
 import Home from "../routes/home";
 import ProjectDisplay from "../routes/project-display";
+import BackgroundGenerator from "./background-generator";
 import Header from "./header";
 
 if ((module as any).hot) {
@@ -19,6 +20,7 @@ export default class App extends Component {
     public render() {
         return (
             <div id="app">
+                <BackgroundGenerator />
                 <Router onChange={this.handleRoute}>
                     <Route path="/" component={Home} />
                     <Route path="/:category" component={ProjectDisplay} />
